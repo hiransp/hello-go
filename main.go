@@ -1,8 +1,6 @@
 package main
 
 import (
-	"fmt"
-
 	"github.com/gin-gonic/gin"
 )
 
@@ -13,7 +11,6 @@ func sayHello(c *gin.Context) {
 }
 
 func main() {
-	fmt.Println("hello")
 
 	router := gin.Default()
 	router.GET("/", sayHello)
