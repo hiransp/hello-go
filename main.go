@@ -10,9 +10,16 @@ func sayHello(c *gin.Context) {
 	})
 }
 
-func main() {
+func ping(c *gin.Context) {
+	c.JSON(200, gin.H{
+		"ping": "pong",
+	})
+}
 
+func main() {
 	router := gin.Default()
 	router.GET("/", sayHello)
+	router.GET("/ping", ping)
+
 	router.Run()
 }
